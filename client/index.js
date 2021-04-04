@@ -1,8 +1,15 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from 'react-dom'
 
-import App from './hello'
+import App from './App'
 
 const root = document.getElementById('root');
 
-ReactDOM.render(<App />, root);
+render(<App />, root);
+
+// if (module.hot) {
+//     module.hot.accept('./App', () => {
+//         const NewApp = require('./App').default;
+//         render(<NewApp />, root);
+//     });
+// }

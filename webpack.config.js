@@ -9,6 +9,17 @@ module.exports = {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist/client'),
   },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: './client/index.html'
+    })
+  ],
+  devServer: {
+    compress: true,
+    port: 9000,
+    hot: true
+  },
   module: {
     rules: [
       {
@@ -19,11 +30,5 @@ module.exports = {
         }
       }
     ]
-  },
-  plugins: [
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      title: 'Image Gallery'
-    })
-  ],
+  }
 };

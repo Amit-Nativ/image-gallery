@@ -5,13 +5,10 @@ import useFetch from '../../hooks/use-fetch'
 import ErrorCard from './components/ErrorCard'
 import Image from './components/Image'
 
-const imagesUrl = 'https://api.jonathanczyzyk.com/api/v1/images/small';
-const headers = { 'x-api-key': "api-key-20b5ec06-2e0e-4978-b910-0fe9e6ee50fc" };
-
 export default () => {
     const classes = useStyles();
 
-    const { data, error, loading } = useFetch(imagesUrl, headers);
+    const { data, error, loading } = useFetch('/api/gallery');
 
     if (error) {
         return (<ErrorCard />)

@@ -8,7 +8,7 @@ import Image from './components/Image'
 export default () => {
     const classes = useStyles();
 
-    const { data, error, loading } = useFetch('/api/gallery');
+    const { data, error, loading } = useFetch('http://localhost:8000/api/gallery');
 
     if (error) {
         return (<ErrorCard />)

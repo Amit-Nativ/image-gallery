@@ -7,5 +7,13 @@ export const get = async () => {
 
     const { data } = await axios.get(url, { headers: headers });
 
+    data.map(x => {
+        request.get(x.url, (error, response, body) => {
+            if (!error && response.statusCode == 200) {
+                x.image = "data:" + response.headers["content-type"] + ";base64," + Buffer.from(body).toString('base64');
+            }
+        })
+    });
+
     return data;
 }

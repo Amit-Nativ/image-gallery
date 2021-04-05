@@ -1,7 +1,7 @@
 import { Box, makeStyles, Typography } from '@material-ui/core'
 import React from 'react'
 
-export default ({ url, description, likes }) => {
+export default ({ url, description, likes, image }) => {
     const classes = useStyles();
 
     return (
